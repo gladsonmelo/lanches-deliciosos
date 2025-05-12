@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lanches Deliciosos</title>
+  <meta name="description" content="Lanches caseiros e deliciosos! Peça lasanhas, brownies, quiches e mais pelo WhatsApp.">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#ff7f50" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff8f0;
+      color: #333;
+    }
+    header {
+      background: #ff7f50;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+      border-bottom: 5px solid #ff5722;
+    }
+    .capa-site img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .produto {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+    .produto:hover {
+      transform: scale(1.03);
+    }
+    .produto img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .produto-content {
+      padding: 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+    }
+    .qtd {
+      width: 60px;
+      padding: 5px;
+      font-size: 1rem;
+      margin: 10px auto;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .btn {
+      background: #ff7f50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 15px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover {
+      background: #ff5722;
+    }
+    .btns-container {
+      margin: 40px auto;
+      text-align: center;
+    }
+    .btns-container button {
+      margin: 10px;
+    }
+    .whatsapp-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      z-index: 999;
+      transition: transform 0.3s ease;
+    }
+    .whatsapp-fixed img {
+      width: 100%;
+      height: 100%;
+    }
+    .whatsapp-fixed:hover {
+      transform: scale(1.1);
+    }
+    footer {
+      background: #ff7f50;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .pix-section {
+      margin-top: 20px;
+    }
+    .pix-img {
+      max-width: 150px;
+      margin: 10px auto;
+      display: block;
+    }
+    .pix-copy {
+      background: white;
+      color: #ff7f50;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      display: inline-block;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lanches Deliciosos</h1>
+  </header>
+
+  <div class="capa-site">
+    <img src="img/capa-site.jpg" alt="">
+  </div>
+
+  <main class="container">
+    <!-- Produto 1 -->
+    <div class="produto">
+      <img src="img/lasanha.jpg" alt="lasanha">
+      <div class="produto-content">
+        <h3>Lasanha serve 2 pessoas</h3>
+        <p>R$ 25,00</p>
+        <input type="number" class="qtd" min="0" value="0" data-nome="lasanha" data-preco="25.00">
+      </div>
+    </div>
+
+    <!-- Produto 2 -->
+    <div class="produto">
+      <img src="img/brownie.jpg" alt="brownie">
+      <div class="produto-content">
+        <h3>Brownie serve 2 pessoas</h3>
+        <p>R$ 25,00</p>
+        <input type="number" class="qtd" min="0" value="0" data-nome="brownie" data-preco="25.00">
+      </div>
+    </div>
+    <!-- Produto 3 -->
+    <div class="produto">
+      <img src="img/panqueca.jpg" alt="panqueca">
+      <div class="produto-content">
+        <h3>Panquecas de Carne ou Frango serve 2 pessoas</h3>
+        <p>R$ 25,00</p>
+        <input type="number" class="qtd" min="0" value="0" data-nome="panqueca" data-preco="25.00">
+      </div>
+    </div>
+
+    <!-- Produto 4 -->
+    <div class="produto">
+      <img src="img/quiche.jpg" alt="quiche">
+      <div class="produto-content">
+        <h3>Quiche serve 1 pessoa</h3>
+        <p>R$ 18,00</p>
+        <input type="number" class="qtd" min="0" value="0" data-nome="quiche" data-preco="18.00">
+      </div>
+    </div>
+
+    <!--  Produto 5 -->
+    <div class="produto">
+      <img src="img/sobremesa-chocolate.png" alt="sobremesa-chocolate">
+      <div class="produto-content">
+        <h3>Torta de chocolate c/ biscoitos (sob encomenda)</h3>
+        <p>R$ 180,00</p>
+        <input type="number" class="qtd" min="0" value="0" data-nome="sobremesa-chocolate" data-preco="180.00">
+      </div>
+    </div>
+
+    <!-- Produto 6 -->
+    <div class="produto">
+      <img src="img/bolo-de-morango.png" alt="bolo-de-morango">
+      <div class="produto-content">
+        <h3>Bolo de morango (sob encomenda)</h3>
+        <p>R$ 160,00</p>
+        <input type="number" class="qtd" min="0" value="0" data-nome="bolo-de-morango" data-preco="160.00">
+      </div>
+    </div>
+
+    <!-- Produto 7 -->
+    <div class="produto">
+      <img src="img/pave.png" alt="pave">
+      <div class="produto-content">
+        <h3>Pavê deliciso (sob encomenda)</h3>
+        <p>R$ 180,00</p>
+        <input type="number" class="qtd" min="0" value="0" data-nome="pave" data-preco="180.00">
+      </div>
+    </div>
+
+    <!-- Produto 8 -->
+    <div class="produto">
+      <img src="img/sobremesa-chocolate-branco.png" alt="Chocolate-Branco">
+      <div class="produto-content">
+        <h3> Torta de Choc. Branco (sob encomenda)</h3>
+        <p>R$ 180,00</p>
+        <input type="number" class="qtd" min="0" value="0" data-nome="Chocolate-Branco" data-preco="180.00">
+      </div>
+    </div>
+
+    <!-- Produto 9 -->
+    <div class="produto">
+      <img src="img/bolo-fofo.jpg" alt="Bolo-fofo">
+      <div class="produto-content">
+        <h3>Bolo fofo tradicional</h3>
+        <p>R$ 45,00</p>
+        <input type="number" class="qtd" min="0" value="0" data-nome="bolo-fofo" data-preco="45.00">
+      </div>
+    </div>
+
+    <!-- Produto 10 -->
+    <div class="produto">
+      <img src="img/bolo-luiz-felipe.jpg" alt="bolo-luiz-felipe">
+      <div class="produto-content">
+        <h3>Bolo Luiz Felipe</h3>
+        <p>R$ 45,00</p>
+        <input type="number" class="qtd" min="0" value="0" data-nome="bolo-luiz-felipe" data-preco="45.00">
+      </div>
+    </div>
+
+    <!-- Produto 11 -->
+     <div class="produto">
+      <img src="img/bolocenoura.jpg" alt="bolocenoura">
+      <div class="produto-content">
+        <h3>Bolo de cenoura c/ calda de chocolate</h3>
+        <p>R$ 55,00</p>
+        <input type="number" class="qtd" min="0" value="0" data-nome="bolocenoura" data-preco="55.00">
+      </div>
+    </div>
+    <!-- Produto 12 -->
+     <div class="produto">
+      <img src="img/bolo-milho.jpg" alt="bolo-milho">
+      <div class="produto-content">
+        <h3>Bolo de milho da roça</h3>
+        <p>R$ 45,00</p>
+        <input type="number" class="qtd" min="0" value="0" data-nome="bolo-milho" data-preco="45.00">
+      </div>
+    </div>
+    
+  </main>
+
+  <div class="btns-container">
+    <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
+    <button class="btn" onclick="limparCarrinho()">Limpar Carrinho</button>
+  </div>
+
+  <footer>
+    <p>Fale conosco no <a href="https://wa.me/5585996944822" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>
+    <div class="pix-section">
+      <img src="img/qrcode.png" alt="QR Code PIX" class="pix-img">
+      <p>Chave PIX: <strong>meupix@email.com</strong></p>
+      <div class="pix-copy" onclick="copiarPIX()">Copiar chave PIX 00020126410014BR.GOV.BCB.PIX0119majofmelo@gmail.com5204000053039865802BR5923MARIA JOSE FONSECA MELO6009FORTALEZA62070503***6304E211</div>
+    </div>
+    <p>&copy; 2025 Lanches Deliciosos. Todos os direitos reservados.</p>
+  </footer>
+
+  <a href="https://wa.me/5585996944822" target="_blank" class="whatsapp-fixed" aria-label="Contato via WhatsApp">
+    <img src="img/zap.png" alt="WhatsApp">
+  </a>
+
+  <script>
+    function copiarPIX() {
+      const chave = "00020126410014BR.GOV.BCB.PIX0119majofmelo@gmail.com5204000053039865802BR5923MARIA JOSE FONSECA MELO6009FORTALEZA62070503***6304E211";
+      navigator.clipboard.writeText(chave).then(() => {
+        alert('Chave PIX copiada com sucesso!');
+      });
+    }
+  </script>
+  <script>
+  function finalizarCompra() {
+    const inputs = document.querySelectorAll('.qtd');
+    let mensagem = '*Pedido Lanches Deliciosos*%0A';
+    let total = 0;
+    let itensSelecionados = 0;
+
+    inputs.forEach(input => {
+      const quantidade = parseInt(input.value);
+      if (quantidade > 0) {
+        const nome = input.dataset.nome;
+        const preco = parseFloat(input.dataset.preco);
+        const subtotal = preco * quantidade;
+        total += subtotal;
+        itensSelecionados++;
+        mensagem += `🍴 *${nome}* - ${quantidade}x R$ ${preco.toFixed(2)} = R$ ${subtotal.toFixed(2)}%0A`;
+      }
+    });
+
+    if (itensSelecionados === 0) {
+      alert('Por favor, selecione ao menos um item.');
+      return;
+    }
+
+    mensagem += `%0A🧾 *Total:* R$ ${total.toFixed(2)}`;
+    const telefone = '5585996944822'; // Substitua pelo seu número com DDI (55)
+    const url = `https://wa.me/${telefone}?text=${mensagem}`;
+    window.open(url, '_blank');
+  }
+
+  function limparCarrinho() {
+    const inputs = document.querySelectorAll('.qtd');
+    inputs.forEach(input => {
+      input.value = 0;
+    });
+  }
+</script>
+
+</body>
+</html>
